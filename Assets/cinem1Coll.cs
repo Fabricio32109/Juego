@@ -33,7 +33,7 @@ public class cinem1Coll : MonoBehaviour
         am = GameObject.Find("explosion").GetComponent<Animator>();
         if (ending == false)
         {
-            TextWriter archivo = new StreamWriter(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            TextWriter archivo = new StreamWriter(@"C:\Users\Public\Documents\tiempo.txt");
             archivo.WriteLine("0:0:0");
             archivo.Close();
             rogue.gameObject.SetActive(false);

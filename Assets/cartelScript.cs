@@ -88,7 +88,7 @@ public class cartelScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player"&&recoger==false&&matar==false)
         {
-            TextReader leer_archivo = new StreamReader(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            TextReader leer_archivo = new StreamReader(@"C:\Users\Public\Documents\tiempo.txt");
             string[] tmptotal = leer_archivo.ReadToEnd().Split(':');
             leer_archivo.Close();
             Stopwatch temp = mg.retTiempo();
@@ -97,7 +97,7 @@ public class cartelScript : MonoBehaviour
             tot = tot.AddSeconds(temp.Elapsed.Seconds + int.Parse(tmptotal[1]));
             tot = tot.AddMinutes(temp.Elapsed.Minutes + int.Parse(tmptotal[0]));
 
-            TextWriter archivo = new StreamWriter(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            TextWriter archivo = new StreamWriter(@"C:\Users\Public\Documents\tiempo.txt");
             archivo.WriteLine(tot.Minute+":"+tot.Second+":"+tot.Millisecond);
             archivo.Close();
             SceneManager.LoadScene(mg.returnNextLevel());
