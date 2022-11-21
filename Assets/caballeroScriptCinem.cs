@@ -402,7 +402,7 @@ public class caballeroScriptCinem : MonoBehaviour
     }
     void solta()
     {
-        mg.finempuje();
+        //mg.finempuje();
         movimiento = false;
         am.SetBool("caminando", false);
         rb.velocity = new Vector2(0, rb.velocity.y);

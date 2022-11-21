@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
 using UnityEngine.SceneManagement;
+using System.IO;
+using System;
 
 public class cartelScript : MonoBehaviour
 {
@@ -86,6 +88,18 @@ public class cartelScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player"&&recoger==false&&matar==false)
         {
+            TextReader leer_archivo = new StreamReader(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            string[] tmptotal = leer_archivo.ReadToEnd().Split(':');
+            leer_archivo.Close();
+            Stopwatch temp = mg.retTiempo();
+            DateTime tot = new DateTime();
+            tot = tot.AddMilliseconds(temp.Elapsed.Milliseconds + int.Parse(tmptotal[2]));
+            tot = tot.AddSeconds(temp.Elapsed.Seconds + int.Parse(tmptotal[1]));
+            tot = tot.AddMinutes(temp.Elapsed.Minutes + int.Parse(tmptotal[0]));
+
+            TextWriter archivo = new StreamWriter(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            archivo.WriteLine(tot.Minute+":"+tot.Second+":"+tot.Millisecond);
+            archivo.Close();
             SceneManager.LoadScene(mg.returnNextLevel());
         }
     }

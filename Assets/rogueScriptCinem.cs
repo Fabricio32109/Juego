@@ -216,7 +216,12 @@ public class rogueScriptCinem : MonoBehaviour
                         break;
                     case 'F':
                         sr.color = new Color(0.79215f, 0.25098f, 0.68627f, 0f);
-                        controlador.GetComponent<cinem1Coll>().activar(1);
+                        break;
+                    case 'T':
+                        controlador.GetComponent<cinem1Coll>().escribir();
+                        break;
+                    case 'R':
+                        controlador.GetComponent<cinem1Coll>().restext();
                         break;
                 }
             }

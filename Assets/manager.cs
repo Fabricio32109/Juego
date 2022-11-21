@@ -12,7 +12,7 @@ public class manager : MonoBehaviour
     public int constante;
     public int monedas;
     public string nextlevel;
-    public TMP_Text tiempo;
+    public Text tiempo;
     int enemtotal;
     int enemact;
     private Stopwatch temp = new Stopwatch();
@@ -133,5 +133,10 @@ public class manager : MonoBehaviour
     public string returnNextLevel()
     {
         return nextlevel;
+    }
+    public Stopwatch retTiempo()
+    {
+        temp.Stop();
+        return temp;
     }
 }

@@ -5,6 +5,10 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.Events;
 using UnityEngine.Tilemaps;
+using TMPro;
+using System;
+using System.IO;
+using System.Diagnostics;
 
 public class cinem1Coll : MonoBehaviour
 {
@@ -12,19 +16,30 @@ public class cinem1Coll : MonoBehaviour
     public Button rogue;
     public Button caballero;
     public Button mago;
+    public bool ending;
+    public Text texto;
+    public string txt = "Gracias por jugar!!! :D ";
+    int cont = 0;
     BoxCollider2D bc;
     Animator am;
     bool inicio = false;
     bool ent = true;
+    bool ent2 = true;
     float tick = 0;
     // Start is called before the first frame update
     void Start()
     {
         bc = GetComponent<BoxCollider2D>();
         am = GameObject.Find("explosion").GetComponent<Animator>();
-        rogue.gameObject.SetActive(false);
-        caballero.gameObject.SetActive(false);
-        mago.gameObject.SetActive(false);
+        if (ending == false)
+        {
+            TextWriter archivo = new StreamWriter(@AppDomain.CurrentDomain.BaseDirectory + "tiempo.txt");
+            archivo.WriteLine("0:0:0");
+            archivo.Close();
+            rogue.gameObject.SetActive(false);
+            caballero.gameObject.SetActive(false);
+            mago.gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame
@@ -32,6 +47,10 @@ public class cinem1Coll : MonoBehaviour
     {
         if (inicio == false)
             return;
+        if (ending)
+        {
+            return;
+        }
         tick += Time.deltaTime;
         if (tick > 0.3 && ent)
         {
@@ -62,6 +81,18 @@ public class cinem1Coll : MonoBehaviour
                 mago.gameObject.SetActive(true);
                 break;
         }
+    }
+    public void escribir()
+    {
+        if (ent2 == false||cont==txt.Length)
+            return;
+        texto.text += txt[cont];
+        cont++;
+        ent2 = false;
+    }
+    public void restext()
+    {
+        ent2 = true;
     }
     public void LoadScene(string name)
     {
