@@ -170,7 +170,6 @@ public class scriptVampiro : MonoBehaviour
     }
     void OnTriggerStay2D(Collider2D other)//Enter
     {
-        UnityEngine.Debug.Log(other.gameObject.tag);
         if (fix == false)
             return;
         collcuerpo.question("fuego");

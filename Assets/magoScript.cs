@@ -35,6 +35,8 @@ public class magoScript : MonoBehaviour
         tf = GetComponent<Transform>();
         transformpivote=pvt.GetComponent<Transform>();
         mg = FindObjectOfType<manager>();
+        rb.sharedMaterial.friction = (float)0.4;
+        transformpivote.rotation = Quaternion.Euler(0, 0, 6);
     }
     bool giro()
     {
@@ -104,6 +106,7 @@ public class magoScript : MonoBehaviour
         {
             if (en_suelo == true)
             {
+                transformpivote.rotation = Quaternion.Euler(0, 0, -1);
                 en_suelo = false;
                 rb.AddForce(new Vector2(0, pot_salto), ForceMode2D.Impulse);
                 am.SetInteger("animador", 2);
@@ -197,12 +200,23 @@ public class magoScript : MonoBehaviour
     {
         if (other.gameObject.tag == "suelo")
         {
-            UnityEngine.Debug.Log("Suelo");
+            rb.sharedMaterial.friction = (float)0.4;
             suelo = true;
         }
         if (other.gameObject.tag == "fuegoEnemigo" || other.gameObject.tag == "enemy")
         {
             muerte();
+        }
+    }
+    void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.gameObject.tag == "suelo")
+        {
+            rb.sharedMaterial.friction = (float)0.4;
+            if (giro())
+                transformpivote.rotation = Quaternion.Euler(0, 0, -6);
+            else
+                transformpivote.rotation = Quaternion.Euler(0, 0, 6);
         }
     }
     void OnTriggerExit2D(Collider2D other)
@@ -211,6 +225,7 @@ public class magoScript : MonoBehaviour
         {
             UnityEngine.Debug.Log("Suelo");
             suelo = false;
+            rb.sharedMaterial.friction = 0;
         }
     }
     void muerte()

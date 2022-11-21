@@ -150,7 +150,7 @@ Rigidbody2D:
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: cb215f2acb57aa34ea87f869a496e275, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   vel_salto: 3
   pot_salto: 5
   pvt: {fileID: 6305874767247632005}
-  Bala: {fileID: 7531409227526726053, guid: 409f2e4dd618d3f45b98d44296493c7f, type: 3}
+  Bala: {fileID: 7348251874783476594, guid: 3efbf128188b8f242a4458f606c4b51e, type: 3}
 --- !u!1 &6305874767247632005
 GameObject:
   m_ObjectHideFlags: 0

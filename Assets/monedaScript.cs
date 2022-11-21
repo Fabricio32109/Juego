@@ -6,6 +6,7 @@ public class monedaScript : MonoBehaviour
 {
     CircleCollider2D cc;
     manager mg;
+    bool entrada = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -20,8 +21,9 @@ public class monedaScript : MonoBehaviour
     }
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Player"&&entrada)
         {
+            entrada = false;
             mg.recogermoneda();
             Destroy(this.gameObject);
         }

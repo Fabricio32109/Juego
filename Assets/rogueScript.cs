@@ -6,7 +6,7 @@ public class rogueScript : MonoBehaviour
 {
     BoxCollider2D bc;
     Rigidbody2D rb;
-    SpriteRenderer sr;
+    //SpriteRenderer sr;
     Transform tf;
     Animator am;
     public int vel;
@@ -26,11 +26,11 @@ public class rogueScript : MonoBehaviour
         bc = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         am = GetComponent<Animator>();
-        sr = GetComponent<SpriteRenderer>();
+        //sr = GetComponent<SpriteRenderer>();
         tf = GetComponent<Transform>();
         transformpivote = pvt.GetComponent<Transform>();
         mg = FindObjectOfType<manager>();
-        rb.material = nofriction;
+        rb.sharedMaterial.friction=(float)0.4;
     }
     bool giro()
     {
@@ -95,6 +95,11 @@ public class rogueScript : MonoBehaviour
                 am.SetInteger("animador", 0);
             }
         }
+        if (Input.GetKeyDown(KeyCode.W) && atacando == false)
+        {
+            rb.sharedMaterial.friction = 0;
+            transformpivote.rotation = Quaternion.Euler(0,0,-1);
+        }
         if (Input.GetKey(KeyCode.W) && atacando == false)
         {
             if (en_suelo == true)
@@ -150,8 +155,10 @@ public class rogueScript : MonoBehaviour
             en_suelo = true;
             caida = false;
         }
-        if (atacando == false)
+        if (atacando == false&&suelo==true)
         {
+            rb.sharedMaterial.friction = (float)0.4;
+            transformpivote.rotation = Quaternion.Euler(0, 0, 5);
             am.SetInteger("animador", 0);
         }
         if (atacando == false && other.gameObject.tag == "enemy")
@@ -161,7 +168,6 @@ public class rogueScript : MonoBehaviour
     {
         if (other.gameObject.tag == "suelo")
         {
-            UnityEngine.Debug.Log("Suelo");
             suelo = true;
         }
         if (other.gameObject.tag == "fuegoEnemigo" )
@@ -173,7 +179,6 @@ public class rogueScript : MonoBehaviour
     {
         if (other.gameObject.tag == "suelo")
         {
-            UnityEngine.Debug.Log("Suelo");
             suelo = false;
         }
     }

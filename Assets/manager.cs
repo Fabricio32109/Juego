@@ -1,6 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
+using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class manager : MonoBehaviour
 {
@@ -8,8 +11,11 @@ public class manager : MonoBehaviour
     public int tumbas;
     public int constante;
     public int monedas;
+    public string nextlevel;
+    public TMP_Text tiempo;
     int enemtotal;
     int enemact;
+    private Stopwatch temp = new Stopwatch();
     bool creacion = false;
     bool empujar=false;
     bool atacksword = false;
@@ -22,12 +28,25 @@ public class manager : MonoBehaviour
         enemtotal = enemigos + tumbas;
         enemact = enemigos;*/
         enemact = enemigos;
-        enemtotal = enemigos+tumbas; 
+        enemtotal = enemigos+tumbas;
+        temp.Start();
     }
 
     // Update is called once per frame
     void Update()
     {
+        string aux;
+        aux = temp.Elapsed.Minutes+":";
+        if ((""+temp.Elapsed.Seconds).Length==2)
+        {
+            aux += temp.Elapsed.Seconds;
+        }
+        else
+        {
+            aux += "0"+temp.Elapsed.Seconds;
+        }
+        aux += (":" + temp.Elapsed.Milliseconds+"00").Substring(0,3);
+        tiempo.text = aux;
         comprobar();
         if (tumbas < constante)
             constante = tumbas;
@@ -41,7 +60,7 @@ public class manager : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.F) )
         {
-            Debug.Log(enemtotal+"/"+tumbas);
+            UnityEngine.Debug.Log(enemtotal+"/"+tumbas);
         }
     }
     void comprobar()
@@ -110,5 +129,9 @@ public class manager : MonoBehaviour
     public bool askataque()
     {
         return atacksword;
+    }
+    public string returnNextLevel()
+    {
+        return nextlevel;
     }
 }

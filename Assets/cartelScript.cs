@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
+using UnityEngine.SceneManagement;
 
 public class cartelScript : MonoBehaviour
 {
@@ -13,6 +14,7 @@ public class cartelScript : MonoBehaviour
     manager mg;
     public bool matar;
     public bool recoger;
+    public bool npc;
     bool normal = false;
     bool entrada = false;
     public GameObject cristal;
@@ -46,6 +48,11 @@ public class cartelScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (mg.askkill()&&npc==false)
+        {
+            mato();
+            am.SetBool("cambio", true);
+        }
         if (mg.askmonedas()&&entrada==false)
         {
             entrada = true;
@@ -79,7 +86,7 @@ public class cartelScript : MonoBehaviour
     {
         if(other.gameObject.tag == "Player"&&recoger==false&&matar==false)
         {
-            UnityEngine.Debug.Log("Ganates pa");
+            SceneManager.LoadScene(mg.returnNextLevel());
         }
     }
 }

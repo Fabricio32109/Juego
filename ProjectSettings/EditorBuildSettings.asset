@@ -5,7 +5,28 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-    path: Assets/Scenes/meee.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
+    path: Assets/Scenes/Cinematica.unity
+    guid: a52a3a9ace73ab241b4aacd1039c44ac
+  - enabled: 1
+    path: Assets/Scenes/MagoNivel1.unity
+    guid: 366ee393a38936748a12f07e2b91c4c9
+  - enabled: 1
+    path: Assets/Scenes/MagoNivel2.unity
+    guid: be655e776f26fa449812e9548997eb1c
+  - enabled: 1
+    path: Assets/Scenes/RogueNivel1.unity
+    guid: e03853bd4121c5d4188b3b635672e631
+  - enabled: 1
+    path: Assets/Scenes/RogueNivel2.unity
+    guid: 023a459758d0f0f4b815c74234d20000
+  - enabled: 1
+    path: Assets/Scenes/CaballeroNivel1.unity
+    guid: 18f47eaab6dc6f64cb1a58e6fa9ccbf4
+  - enabled: 1
+    path: Assets/Scenes/CaballeroNivel2.unity
+    guid: b9983d76c3b3da94e995a21b828bb238
   m_configObjects: {}
