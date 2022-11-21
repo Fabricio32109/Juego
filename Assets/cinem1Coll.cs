@@ -18,13 +18,17 @@ public class cinem1Coll : MonoBehaviour
     public Button mago;
     public bool ending;
     public Text texto;
+    public Text TiempoTexto;
     public string txt = "Gracias por jugar!!! :D ";
+    string tiempototal;
     int cont = 0;
     BoxCollider2D bc;
     Animator am;
     bool inicio = false;
     bool ent = true;
     bool ent2 = true;
+    bool ent3 = true;
+    int cont2 = 0;
     float tick = 0;
     // Start is called before the first frame update
     void Start()
@@ -40,6 +44,10 @@ public class cinem1Coll : MonoBehaviour
             caballero.gameObject.SetActive(false);
             mago.gameObject.SetActive(false);
         }
+        TextReader leer_archivo = new StreamReader(@"C:\Users\Public\Documents\tiempo.txt");
+        string[] tmptotal = leer_archivo.ReadToEnd().Split(':');
+        leer_archivo.Close();
+        tiempototal = "Tiempo: "+tmptotal[0]+":"+tmptotal[1]+":"+tmptotal[2];
     }
 
     // Update is called once per frame
@@ -93,6 +101,15 @@ public class cinem1Coll : MonoBehaviour
     public void restext()
     {
         ent2 = true;
+        ent3 = true;
+    }
+    public void escribirtiempo()
+    {
+        if (ent3 == false || cont2 == tiempototal.Length)
+            return;
+        TiempoTexto.text+=tiempototal[cont2];
+        cont2++;
+        ent3 = false;
     }
     public void LoadScene(string name)
     {

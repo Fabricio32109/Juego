@@ -220,6 +220,9 @@ public class rogueScriptCinem : MonoBehaviour
                     case 'T':
                         controlador.GetComponent<cinem1Coll>().escribir();
                         break;
+                    case 'C':
+                        controlador.GetComponent<cinem1Coll>().escribirtiempo(); ;
+                        break;
                     case 'R':
                         controlador.GetComponent<cinem1Coll>().restext();
                         break;
