@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System.Diagnostics;
 using System;
+using UnityEngine.SceneManagement;
 
 public class caballeroScript : MonoBehaviour
 {
@@ -56,6 +57,10 @@ public class caballeroScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(mg.returnActualLevel());
+        }
         guardar = tf.position;
         if (giro())
         {
@@ -73,7 +78,7 @@ public class caballeroScript : MonoBehaviour
             mg.finempuje();
             entradaempuje = true;
         }
-        if (rb.velocity.x < 1)
+        if (rb.velocity.x < 1||rb.velocity.x>-1)
             rb.velocity = new Vector2(0, rb.velocity.y);
         if (empujar== true)
         {
@@ -195,7 +200,6 @@ public class caballeroScript : MonoBehaviour
     {
         if (movimiento && mg.askempuje())
         {
-            UnityEngine.Debug.Log("Holi1");
             empujar = true;
             ataq.Start();
             rb.AddForce(new Vector2(0, 1), ForceMode2D.Impulse);
@@ -280,6 +284,5 @@ public class caballeroScript : MonoBehaviour
         //Physics.gravity = new Vector3(0, 0, 0);
         mg.perder();
         muerto = true;
-        Destroy(this.gameObject, (float)0.6);
     }
 }

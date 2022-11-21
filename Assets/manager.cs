@@ -11,6 +11,7 @@ public class manager : MonoBehaviour
     public int tumbas;
     public int constante;
     public int monedas;
+    public string actuallevel;
     public string nextlevel;
     public Text tiempo;
     int enemtotal;
@@ -133,6 +134,10 @@ public class manager : MonoBehaviour
     public string returnNextLevel()
     {
         return nextlevel;
+    }
+    public string returnActualLevel()
+    {
+        return actuallevel;
     }
     public Stopwatch retTiempo()
     {

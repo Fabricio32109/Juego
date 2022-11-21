@@ -2456,6 +2456,7 @@ MonoBehaviour:
   tumbas: 0
   constante: 0
   monedas: 11
+  actuallevel: RogueNivel2
   nextlevel: Ending
   tiempo: {fileID: 1826348497}
 --- !u!4 &1211803733

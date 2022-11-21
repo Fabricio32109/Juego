@@ -259,7 +259,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &43016884
 RectTransform:
@@ -917,7 +917,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.9581075
+  orthographic size: 2.9283664
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -2490,6 +2490,7 @@ MonoBehaviour:
   tumbas: 4
   constante: 8
   monedas: 11
+  actuallevel: MagoNivel2
   nextlevel: Ending
   tiempo: {fileID: 542216422}
 --- !u!4 &1211803733

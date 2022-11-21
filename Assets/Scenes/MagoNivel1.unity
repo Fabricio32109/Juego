@@ -1841,6 +1841,7 @@ MonoBehaviour:
   tumbas: 7
   constante: 4
   monedas: 11
+  actuallevel: MagoNivel1
   nextlevel: MagoNivel2
   tiempo: {fileID: 228735224}
 --- !u!4 &1211803733

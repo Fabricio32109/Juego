@@ -136,7 +136,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6082802997584502244, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -5.335071
+      value: -5.601
       objectReference: {fileID: 0}
     - target: {fileID: 6082802997584502244, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -655,7 +655,7 @@ Canvas:
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 25
   m_SortingLayerID: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &510363830
 RectTransform:
@@ -731,7 +731,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 2.977634
+  orthographic size: 2.9627037
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1645,6 +1645,7 @@ MonoBehaviour:
   tumbas: 0
   constante: 0
   monedas: 0
+  actuallevel: CaballeroNivel1
   nextlevel: CaballeroNivel2
   tiempo: {fileID: 1372866522}
 --- !u!4 &1211803733
@@ -4096,6 +4097,14 @@ PrefabInstance:
     - target: {fileID: 6082802997584502247, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}
       propertyPath: m_Name
       value: vampiro (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082802998062049155, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.732
+      objectReference: {fileID: 0}
+    - target: {fileID: 6082802998062049155, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.319
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0f0f6d7c168c2b946b2a12b5e964e6f3, type: 3}

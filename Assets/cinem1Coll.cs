@@ -16,6 +16,11 @@ public class cinem1Coll : MonoBehaviour
     public Button rogue;
     public Button caballero;
     public Button mago;
+    public GameObject marco;
+    public Text instrucciones;
+    SpriteRenderer sr;
+    float color=0;
+    int tamanho = 1;
     public bool ending;
     public Text texto;
     public Text TiempoTexto;
@@ -28,6 +33,7 @@ public class cinem1Coll : MonoBehaviour
     bool ent = true;
     bool ent2 = true;
     bool ent3 = true;
+    bool ent4 = true;
     int cont2 = 0;
     float tick = 0;
     // Start is called before the first frame update
@@ -37,6 +43,7 @@ public class cinem1Coll : MonoBehaviour
         am = GameObject.Find("explosion").GetComponent<Animator>();
         if (ending == false)
         {
+            sr = marco.GetComponent<SpriteRenderer>();
             TextWriter archivo = new StreamWriter(@"C:\Users\Public\Documents\tiempo.txt");
             archivo.WriteLine("0:0:0");
             archivo.Close();
@@ -64,6 +71,7 @@ public class cinem1Coll : MonoBehaviour
         {
             ent = false;
             Destroy(gd);
+            gd.GetComponent<Transform>().position = new Vector2(5, 2);
             am.SetBool("sec", true);
         }
         if (tick > 0.5)
@@ -114,5 +122,20 @@ public class cinem1Coll : MonoBehaviour
     public void LoadScene(string name)
     {
         SceneManager.LoadScene(name);
+    }
+    public void Aparecer()
+    {
+        if (ent4 == false)
+            return;
+        ent4 = false;
+        color += (float)0.05;
+        sr.color = new Color(1f, 1f, 1f, color);
+        tamanho++;
+        if(tamanho<=20)
+            instrucciones.fontSize = tamanho;
+    }
+    public void resetAparecer()
+    {
+        ent4 = true;
     }
 }

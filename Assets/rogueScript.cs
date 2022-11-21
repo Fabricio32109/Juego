@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class rogueScript : MonoBehaviour
 {
@@ -43,6 +44,10 @@ public class rogueScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            SceneManager.LoadScene(mg.returnActualLevel());
+        }
         if (muerto == true)
         {
             tf.position = new Vector3(transformpivote.position.x, transformpivote.position.y - (float)0.3, transformpivote.position.z);
@@ -61,6 +66,8 @@ public class rogueScript : MonoBehaviour
             tf.position = new Vector3(transformpivote.position.x + (float)0.2, transformpivote.position.y, transformpivote.position.z);
             transformpivote.position = new Vector3(guardar.x - (float)0.2, guardar.y, guardar.z);
         }
+        if (rb.velocity.x < 2.8 || rb.velocity.x > -2.8)
+            rb.velocity = new Vector2(0, rb.velocity.y);
         if (Input.GetKey(KeyCode.D) && atacando == false)
         {
             transformpivote.localScale = new Vector3(1, 1, 1);
@@ -190,6 +197,5 @@ public class rogueScript : MonoBehaviour
         rb.gravityScale = 0;
         bc.enabled = false;
         muerto = true;
-        Destroy(this.gameObject, (float)0.6);
     }
 }
