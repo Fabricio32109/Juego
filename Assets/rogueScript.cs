@@ -104,6 +104,7 @@ public class rogueScript : MonoBehaviour
         }
         if (Input.GetKeyDown(KeyCode.W) && atacando == false)
         {
+            mg.hacerSonido(5, 1);
             rb.sharedMaterial.friction = 0;
             transformpivote.rotation = Quaternion.Euler(0,0,-1);
         }
@@ -133,7 +134,7 @@ public class rogueScript : MonoBehaviour
             bc.offset = new Vector2((float)0.02939844, (float)-0.05630279);
             bc.size = new Vector2((float)0.3365412, (float)0.5759625);
             am.SetInteger("animador", 3);
-            mg.hacerSonido(5,1);
+            mg.hacerSonido(10, (float)0.6);
         }
         if (Input.GetKey(KeyCode.Space) && muerto == false)
         {
@@ -199,6 +200,6 @@ public class rogueScript : MonoBehaviour
         rb.gravityScale = 0;
         bc.enabled = false;
         muerto = true;
-        mg.hacerSonido(6, 1);
+        mg.hacerSonido(6, (float)0.6);
     }
 }

@@ -154,6 +154,7 @@ public class caballeroScript : MonoBehaviour
         {
             if (en_suelo == true)
             {
+                mg.hacerSonido(5, 1);
                 en_suelo = false;
                 rb.AddForce(new Vector2(0, pot_salto), ForceMode2D.Impulse);
                 am.SetInteger("animador", 2);
@@ -171,6 +172,7 @@ public class caballeroScript : MonoBehaviour
         {
             iniciarataque = true;
             atacare();
+            mg.hacerSonido(10, (float)0.2);
         }
         if(Input.GetKey(KeyCode.Space) && en_suelo == true)
         {
@@ -230,6 +232,7 @@ public class caballeroScript : MonoBehaviour
     {
         if (suelo == true)
         {
+            mg.hacerSonido(7, 1);
             en_suelo = true;
             caida = false;
         }
@@ -284,5 +287,6 @@ public class caballeroScript : MonoBehaviour
         //Physics.gravity = new Vector3(0, 0, 0);
         mg.perder();
         muerto = true;
+        mg.hacerSonido(6,1);
     }
 }

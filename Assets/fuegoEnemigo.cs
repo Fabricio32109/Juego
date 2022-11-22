@@ -46,6 +46,7 @@ public class fuegoEnemigo : MonoBehaviour
     public void cambio()
     {
         gameObject.tag = "fuego";
+        mg.hacerSonido(1, (float)0.1);
         sr.color = new Color(0.79215f, 0.25098f, 0.68627f, 1f);
         flipo = !flipo;
     }
@@ -71,6 +72,7 @@ public class fuegoEnemigo : MonoBehaviour
         am.SetBool("explosion", true);
         rb.velocity = new Vector2(rb.velocity.x / 4, 0);
         muerte = true;
+        mg.hacerSonido(1, (float)0.2);
         Destroy(this.gameObject, (float)0.3);
     }
 }
