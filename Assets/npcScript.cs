@@ -68,6 +68,7 @@ public class npcScript : MonoBehaviour
         }
         if (mg.askkill()|| Input.GetKeyDown(KeyCode.F))
         {
+            mg.hacerSonido(4, 1);
             cartel.GetComponent<cartelScript>().mato();
             src.color = new Color(1f, 1f, 1f, 0f);
             Destroy(pvt,(float)0.6);
@@ -118,6 +119,8 @@ public class npcScript : MonoBehaviour
     }
     void aparecer()
     {
+        if(mg.funciono())
+            mg.hacerSonido(4, (float)0.5);
         verfescape.Reset();
         amt.SetBool("cambia", true);
         i = 1f;
@@ -128,6 +131,7 @@ public class npcScript : MonoBehaviour
     void desaparecer()
     {
         amt.SetBool("cambia", true);
+        mg.hacerSonido(4, (float)0.5);
         i = 0f;
         switcht = true;
         crontrnd.Start();

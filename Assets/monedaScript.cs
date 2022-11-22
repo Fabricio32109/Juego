@@ -23,6 +23,7 @@ public class monedaScript : MonoBehaviour
     {
         if (other.gameObject.tag == "Player"&&entrada)
         {
+            mg.hacerSonido(0,1);
             entrada = false;
             mg.recogermoneda();
             Destroy(this.gameObject);

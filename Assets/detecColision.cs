@@ -80,10 +80,6 @@ public class detecColision : MonoBehaviour
     }
     public bool answer()
     {
-        if (pregunta)
-        {
-            return true;
-        }
-        return false;
+        return pregunta;
     }
 }

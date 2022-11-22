@@ -53,11 +53,13 @@ public class cartelScript : MonoBehaviour
         if (mg.askkill()&&npc==false)
         {
             mato();
+            mg.hacerSonido(3, 1);
             am.SetBool("cambio", true);
         }
         if (mg.askmonedas()&&entrada==false)
         {
             entrada = true;
+            mg.hacerSonido(2, 1);
             amr.SetBool("cambio", true);
             normal = true;
             cambio.Restart();

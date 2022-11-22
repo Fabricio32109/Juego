@@ -135,3 +135,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caa7dfba15e9062429de7bda56e3c5dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  monedasonido: {fileID: 8300000, guid: d1afd3f4d23c24f418ffc315afb04965, type: 3}

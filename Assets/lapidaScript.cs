@@ -29,6 +29,7 @@ public class lapidaScript : MonoBehaviour
     {
         if (muerto && destruccion == false)
         {
+            mg.hacerSonido(9, (float)1);
             destruccion = true;
             mg.destruirlapida();
         }
@@ -63,6 +64,7 @@ public class lapidaScript : MonoBehaviour
     }
     void muerte()
     {
+
         gameObject.tag = "ignorar";
         am.SetBool("destruccion", true);
         muerto = true;

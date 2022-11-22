@@ -113,6 +113,7 @@ public class magoScript : MonoBehaviour
         {
             if (en_suelo == true)
             {
+                mg.hacerSonido(5, 1);
                 transformpivote.rotation = Quaternion.Euler(0, 0, -1);
                 en_suelo = false;
                 rb.AddForce(new Vector2(0, pot_salto), ForceMode2D.Impulse);
@@ -137,6 +138,7 @@ public class magoScript : MonoBehaviour
         {
             if (primerataque==true && ataq.Elapsed.TotalMilliseconds > 450)
             {
+                mg.hacerSonido(8, 1);
                 primerataque = false;
                 disparar();
                 ataq.Reset();
@@ -144,6 +146,7 @@ public class magoScript : MonoBehaviour
             }
             if(primerataque==false&& ataq.Elapsed.TotalMilliseconds > 150)
             {
+                mg.hacerSonido(8, 1);
                 disparar();
                 ataq.Reset();
                 ataq.Start();
@@ -199,6 +202,7 @@ public class magoScript : MonoBehaviour
         {
             rb.sharedMaterial.friction = (float)0.4;
             suelo = true;
+            mg.hacerSonido(7, 1);
         }
         if (other.gameObject.tag == "fuegoEnemigo" || other.gameObject.tag == "enemy")
         {
@@ -228,6 +232,7 @@ public class magoScript : MonoBehaviour
     void muerte()
     {
         am.SetInteger("animador", 4);
+        mg.hacerSonido(6, 1);
         rb.velocity = new Vector2(0, 0);
         //Physics.gravity = new Vector3(0, 0, 0);
         mg.perder();

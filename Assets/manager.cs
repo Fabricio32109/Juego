@@ -14,6 +14,7 @@ public class manager : MonoBehaviour
     public string actuallevel;
     public string nextlevel;
     public Text tiempo;
+    public List<AudioClip> sonidos;
     int enemtotal;
     int enemact;
     private Stopwatch temp = new Stopwatch();
@@ -23,16 +24,23 @@ public class manager : MonoBehaviour
     bool muerte = false;
     bool limpia = false;
     bool recogida = false;
+    bool enfuncionamiento = false;
+    AudioSource aus;
     // Start is called before the first frame update
     void Start()
     {/*
         enemtotal = enemigos + tumbas;
         enemact = enemigos;*/
+        aus = GetComponent<AudioSource>();
         enemact = enemigos;
         enemtotal = enemigos+tumbas;
         temp.Start();
+        enfuncionamiento = true;
     }
-
+    public bool funciono()
+    {
+        return enfuncionamiento;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -59,10 +67,10 @@ public class manager : MonoBehaviour
         {
             creacion = false;
         }
-        if (Input.GetKeyDown(KeyCode.F) )
-        {
-            UnityEngine.Debug.Log(enemtotal+"/"+tumbas);
-        }
+    }
+    public void hacerSonido(int coord,float volumen)
+    {
+        aus.PlayOneShot(sonidos[coord],volumen);
     }
     void comprobar()
     {

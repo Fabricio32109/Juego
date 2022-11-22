@@ -165,6 +165,7 @@ public class scriptVampiro : MonoBehaviour
         {
             atacando = true;
             am.SetInteger("animador", 1);
+            mg.hacerSonido(1,(float)0.1);
             fuego.Start();
         }
     }

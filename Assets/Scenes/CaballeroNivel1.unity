@@ -1361,6 +1361,91 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 7245992598928992778, guid: 3a0bbd2bc3ee20749bb9c464e0a3d8ff, type: 3}
   m_PrefabInstance: {fileID: 534478812}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &997579468
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4654984167864620899, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_Name
+      value: GameManager (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: tiempo
+      value: 
+      objectReference: {fileID: 1372866522}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: tumbas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: monedas
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: enemigos
+      value: 18
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: constante
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: nextlevel
+      value: CaballeroNivel2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620900, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: actuallevel
+      value: CaballeroNivel1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_RootOrder
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.604802
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.9084194
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.05133391
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4654984167864620901, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 778c65eb7fde6b4459bc5cd9cfe8c961, type: 3}
 --- !u!4 &1009271011 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7245992598928992778, guid: 3a0bbd2bc3ee20749bb9c464e0a3d8ff, type: 3}
@@ -1648,6 +1733,7 @@ MonoBehaviour:
   actuallevel: CaballeroNivel1
   nextlevel: CaballeroNivel2
   tiempo: {fileID: 1372866522}
+  sonidos: []
 --- !u!4 &1211803733
 Transform:
   m_ObjectHideFlags: 0
