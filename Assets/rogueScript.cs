@@ -133,6 +133,7 @@ public class rogueScript : MonoBehaviour
             bc.offset = new Vector2((float)0.02939844, (float)-0.05630279);
             bc.size = new Vector2((float)0.3365412, (float)0.5759625);
             am.SetInteger("animador", 3);
+            mg.hacerSonido(5,1);
         }
         if (Input.GetKey(KeyCode.Space) && muerto == false)
         {
@@ -159,6 +160,7 @@ public class rogueScript : MonoBehaviour
     {
         if (suelo == true)
         {
+            mg.hacerSonido(7, 1);
             en_suelo = true;
             caida = false;
         }
@@ -197,5 +199,6 @@ public class rogueScript : MonoBehaviour
         rb.gravityScale = 0;
         bc.enabled = false;
         muerto = true;
+        mg.hacerSonido(6, 1);
     }
 }
